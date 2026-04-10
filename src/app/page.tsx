@@ -82,36 +82,46 @@ export default function Page() {
 <section className="bg-[#1A2C42] rounded-[2.5rem] p-8 md:col-span-2 flex flex-col justify-between relative overflow-hidden group min-h-[480px] border border-white/5">
   <div className="relative z-10 flex justify-between items-start">
     <div>
-      <h2 className="text-4xl font-black mb-1 uppercase tracking-tighter">Media Studio</h2>
+      <h2 className="text-4xl font-black mb-1 uppercase tracking-tighter text-white">Media Studio</h2>
       <p className="text-slate-400 text-sm max-w-sm italic">Capturing the pulse of the city through professional lenswork.</p>
     </div>
     <div className="flex flex-col items-end gap-1">
-       <span className="bg-[#FF5722] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg shadow-[#FF5722]/20">Active</span>
-       <span className="text-[9px] text-slate-500 font-mono uppercase tracking-widest">Est. 2026</span>
+       <span className="bg-[#FF5722] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg shadow-[#FF5722]/20 text-white">Portfolio</span>
+       <span className="text-[9px] text-slate-500 font-mono uppercase tracking-widest">HD Quality</span>
     </div>
   </div>
 
-  {/* Interactive Gallery */}
+  {/* Interactive HD Gallery Grid */}
   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 relative z-10">
-    {[1, 2, 3, 4].map((i) => (
-      <div key={i} className="aspect-[3/4] bg-slate-800/50 rounded-2xl border border-white/5 overflow-hidden relative group/img cursor-crosshair">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent opacity-60"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-[10px] font-black text-slate-600 uppercase tracking-widest group-hover/img:text-[#FF5722] transition-colors">
-          View Work
+    {[
+      { id: 1, src: '/shoot-1.jpg', alt: 'Photography 01' },
+      { id: 2, src: '/shoot-2.jpg', alt: 'Photography 02' },
+      { id: 3, src: '/shoot-3.jpg', alt: 'Photography 03' },
+      { id: 4, src: '/shoot-4.jpg', alt: 'Photography 04' }
+    ].map((photo) => (
+      <div key={photo.id} className="aspect-[3/4] bg-slate-800/50 rounded-2xl border border-white/5 overflow-hidden relative group/img cursor-pointer">
+        <img 
+          src={photo.src} 
+          alt={photo.alt}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
+        />
+        {/* The Fixed Overlay Section */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-transparent opacity-0 group-hover/img:opacity-90 transition-opacity duration-300 flex items-end p-4">
+          <p className="text-[10px] font-black uppercase tracking-widest text-[#FF5722]">
+            {photo.alt}
+          </p> {/* This was the missing closing tag! */}
         </div>
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-[#FF5722]/10 opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
       </div>
     ))}
   </div>
 
   <div className="relative z-10 flex justify-between items-center mt-6">
     <button className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">
-      Browse Catalog →
+      View All Projects →
     </button>
-    <div className="flex gap-2">
+    <div className="flex gap-2 items-center">
       <div className="w-2 h-2 rounded-full bg-[#FF5722] animate-ping"></div>
-      <span className="text-[9px] font-bold text-slate-500 uppercase">Studio Available</span>
+      <span className="text-[9px] font-bold text-slate-500 uppercase">Studio Live</span>
     </div>
   </div>
 </section>
