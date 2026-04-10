@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  --wacose-orange: #FF5722;
+  --wacose-navy: #0A192F;
+}
+
+body {
+  background-color: #f8fafc; /* A clean, light grey */
+  color: var(--wacose-navy);
+}
