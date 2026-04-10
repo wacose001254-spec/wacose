@@ -94,10 +94,10 @@ export default function Page() {
   {/* Interactive HD Gallery Grid */}
   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 relative z-10">
     {[
-      { id: 1, src: '/shoot-1.jpg', alt: 'Photography 01' },
-      { id: 2, src: '/shoot-2.jpg', alt: 'Photography 02' },
-      { id: 3, src: '/shoot-3.jpg', alt: 'Photography 03' },
-      { id: 4, src: '/shoot-4.jpg', alt: 'Photography 04' }
+      { id: 1, src: '/shoot-1.jpg', alt: 'Our Brand Motorcycle' },
+      { id: 2, src: '/shoot-2.jpg', alt: 'Corporate Delivery' },
+      { id: 3, src: '/shoot-3.jpg', alt: 'Birthday Photo Shoot' },
+      { id: 4, src: '/shoot-4.jpg', alt: 'Web Development' }
     ].map((photo) => (
       <div key={photo.id} className="aspect-[3/4] bg-slate-800/50 rounded-2xl border border-white/5 overflow-hidden relative group/img cursor-pointer">
         <img 
